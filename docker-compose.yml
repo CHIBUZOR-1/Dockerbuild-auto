@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+      - ./clientside/.env 
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
